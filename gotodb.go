@@ -8,7 +8,7 @@ func main() {
     
     if len(os.Args) < 4 {
         fmt.Println("not enough arguments")
-        fmt.Println("usage: go run hello.go <table> <file> <delimeter>")
+        fmt.Println("usage: go run gotodb.go <table> <file> <delimeter>")
         return
     }
     
