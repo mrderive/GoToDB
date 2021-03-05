@@ -22,11 +22,11 @@ Susan|35
 
 Run the script with the appropriate command line arguments:
 ```
-go run gotodb.go <table> <file> <delimeter>
+go run gotodb.go <table> <file> <delimeter> <server>
 ```
 
 For example:
 ```
-go run gotodb.go customers data.txt '|'
+go run gotodb.go customers data.txt '|' localhost:27000
 ```
 
