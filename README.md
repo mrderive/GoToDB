@@ -8,7 +8,7 @@ Clone or download `gotodb.go`.
 
 ## Configuration
 
-The data file has to be delimited by a character not used by any of the field values. Furthermore, the field values have to be in the same order as the `HelloDB` metadata [configuration file](https://github.com/mrderive/HelloDB/blob/main/README.md#configuration).
+The data file has to be delimited by a character not used by any of the field values. Furthermore, the field values have to be in the same order as defined in the `HelloDB` metadata [configuration file](https://github.com/mrderive/HelloDB/blob/main/README.md#configuration).
 
 For example, `data.txt`:
 ```
