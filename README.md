@@ -4,7 +4,7 @@ A hello world implementation of a bulk loader into [HelloDB](https://github.com/
 
 ## Installation
 
-Clone or download `gotodb`.
+Clone or download `gotodb.go`.
 
 ## Configuration
 
