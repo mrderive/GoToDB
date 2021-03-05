@@ -6,17 +6,18 @@ import "net"
 
 func main() {
     
-    if len(os.Args) < 4 {
+    if len(os.Args) < 5 {
         fmt.Println("not enough arguments")
-        fmt.Println("usage: go run gotodb.go <table> <file> <delimeter>")
+        fmt.Println("usage: go run gotodb.go <table> <file> <delimeter> <server>")
         return
     }
     
     table_name := os.Args[1]
     file_name := os.Args[2]
     delim := os.Args[3][0]
+    server := os.Args[4]
     
-    conn, e_conn := net.Dial("tcp", "localhost:27000")
+    conn, e_conn := net.Dial("tcp", server)
     if e_conn != nil {
         fmt.Println("error connecting to database: ", e_conn.Error())
         return
