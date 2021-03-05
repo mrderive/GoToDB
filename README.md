@@ -27,6 +27,21 @@ go run gotodb.go <table> <file> <delimeter> <server>
 
 For example:
 ```
-go run gotodb.go customers data.txt '|' localhost:27000
+$ go run gotodb.go customers data.txt '|' localhost:27000
+
+inserted>
+recno: 1
+
+
+inserted>
+recno: 2
+
+
+inserted>
+recno: 3
+
+
+inserted>
+recno: 4
 ```
 
