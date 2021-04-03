@@ -22,6 +22,7 @@ func main() {
         fmt.Println("error connecting to database: ", e_conn.Error())
         return
     }
+    defer conn.Close()
 
     rec := []byte{'i','n','s','e','r','t',']'}
     for i := 0; i < len(table_name); i++ {
@@ -29,9 +30,14 @@ func main() {
     }
     rec = append(rec, ']')
     
-    file_handle, _ := os.Open(file_name)
+    file_handle, e_file := os.Open(file_name)
+    if e_file != nil {
+        fmt.Println("error opening file: ", e_file.Error())
+    }
+    defer file_handle.Close()
+    
     buffer := make([]byte, 1)
-    _, e_file := file_handle.Read(buffer)
+    _, e_file = file_handle.Read(buffer)
     for e_file == nil {
         if buffer[0] == delim {
             rec = append(rec, ']')
@@ -45,9 +51,6 @@ func main() {
         
         _, e_file = file_handle.Read(buffer)
     }
-    
-    file_handle.Close()
-    conn.Close()
 }
 
 func send(rec []byte, conn net.Conn) {
