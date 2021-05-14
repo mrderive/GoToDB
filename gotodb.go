@@ -24,11 +24,7 @@ func main() {
     }
     defer conn.Close()
 
-    rec := []byte{'i','n','s','e','r','t',']'}
-    for i := 0; i < len(table_name); i++ {
-        rec = append(rec, table_name[i])
-    }
-    rec = append(rec, ']')
+    rec := []byte("insert]" + table_name + "]")
     
     file_handle, e_file := os.Open(file_name)
     if e_file != nil {
